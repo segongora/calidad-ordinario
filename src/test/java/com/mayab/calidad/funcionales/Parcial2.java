@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +11,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Parcial2 {
 
 	private WebDriver driver;
@@ -24,7 +26,7 @@ public class Parcial2 {
 		url = "https://mern-crud.herokuapp.com";
 		
 		// Indicarle al sistema donde tengo almacenado MI chromedriver. Debe cambiarse el segundo valor.
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Users/segongora/chromedriver");
 		
 		// Crear nuevo driver.
 		driver = new ChromeDriver();
@@ -46,7 +48,7 @@ public class Parcial2 {
 
 	// Test para agregar CORRECTAMENTE un usuario.
 	@Test
-	public void testAggregate() {
+	public void testAAggregate() {
 		
 		// Iniciar driver con URL dada.
 		driver.get(url);
@@ -95,7 +97,7 @@ public class Parcial2 {
 	
 	// Test para agregar INCORRECTAMENTE un usuario.
 	@Test
-	public void testAggregateFail() {
+	public void testBAggregateFail() {
 		
 		// Iniciar driver con URL dada.
 		driver.get(url);
@@ -144,7 +146,7 @@ public class Parcial2 {
 	
 	// Test para editar CORRECTAMENTE un usuario.
 	@Test
-	public void testEdit() {
+	public void testCEdit() {
 		
 		// Funcion para siempre tener un usuario, y no tener error en las pruebas de Edit, Delete
 		fallbackUser();
@@ -206,7 +208,7 @@ public class Parcial2 {
 	
 	// Test para editar INCORRECTAMENTE un usuario.
 	@Test
-	public void testEditFail() {
+	public void testDEditFail() {
 		// Funcion para siempre tener un usuario, y no tener error en las pruebas de Edit, Delete
 		fallbackUser();
 		
@@ -265,7 +267,7 @@ public class Parcial2 {
 	
 	// Test para borrar CORRECTAMENTE a un usuario.
 	@Test
-	public void testDelete() {
+	public void testFDelete() {
 		
 		// Funcion para siempre tener un usuario, y no tener error en las pruebas de Edit, Delete
 		fallbackUser();
@@ -320,7 +322,7 @@ public class Parcial2 {
 	
 	// Test para borrar INCORRECTAMENTE a un usuario.
 	@Test
-	public void testDeleteFail() {
+	public void testGDeleteFail() {
 		
 		// Funcion para siempre tener un usuario, y no tener error en las pruebas de Edit, Delete
 		fallbackUser();
@@ -420,4 +422,3 @@ public class Parcial2 {
 	
 	
 }
-
