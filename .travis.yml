@@ -4,6 +4,7 @@ jdk: oraclejdk13
       
 services:
 - xvfb
+- mysql
 
 before_install:
   - sudo apt-get update
