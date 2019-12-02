@@ -22,4 +22,5 @@ before_install:
 script: 
 - mvn clean
 - mvn test
+- mvn surefire:test -Dtest=funcionales
 - mvn surefire:test -Dtest=alumnoMock
