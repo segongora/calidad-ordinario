@@ -23,5 +23,5 @@ before_install:
 script: 
 - mvn clean
 - mvn test
-- mvn surefire:test -Dtest=DBUnitTestSQL
 - mysql script.sql
+- mvn surefire:test -Dtest=DBUnitTestSQL
