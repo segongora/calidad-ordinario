@@ -6,6 +6,11 @@ services:
 - xvfb
 - mysql
 
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
 before_install:
   - sudo apt-get update
   - sudo apt-get install dbus-x11
@@ -18,10 +23,11 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - sudo cp chromedriver /usr/bin
+  
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
 
   
 script: 
 - mvn clean
 - mvn test
-- mysql script.sql
 - mvn surefire:test -Dtest=DBUnitTestSQL
