@@ -1,6 +1,3 @@
-CREATE USER 'calidad'@'localhost' IDENTIFIED BY 'calidad';
-GRANT ALL PRIVILEGES ON *.* TO 'calidad'@'localhost' IDENTIFIED BY '%password%' WITH GRANT OPTION;
-
 CREATE DATABASE IF NOT EXISTS DBUnit;
 USE DBUnit;
 CREATE TABLE IF NOT EXISTS Alumnia(
