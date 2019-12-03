@@ -19,9 +19,6 @@ before_install:
   - unzip chromedriver_linux64.zip
   - sudo cp chromedriver /usr/bin
   
-  - sudo mysql -e "use mysql; update user set authentication_string=PASSWORD('123123') where User='root'; update user set plugin='mysql_native_password';FLUSH PRIVILEGES;"
-  - sudo mysql_upgrade -u root -p123123
-  - sudo service mysql restart
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
   - mysql -e 'USE DBUnit; CREATE TABLE IF NOT EXISTS Alumnia (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, firstName VARCHAR(45), lastName VARCHAR(45), age INT NOT NULL, average FLOAT NOT NULL);'
 
