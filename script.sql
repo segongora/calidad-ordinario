@@ -1,6 +1,5 @@
 CREATE USER 'calidad'@'localhost' IDENTIFIED BY 'calidad';
-GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON *.* TO 'calidad'@'localhost';
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY '%password%' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'calidad'@'localhost' IDENTIFIED BY '%password%' WITH GRANT OPTION;
 
 CREATE DATABASE IF NOT EXISTS DBUnit;
 USE DBUnit;
