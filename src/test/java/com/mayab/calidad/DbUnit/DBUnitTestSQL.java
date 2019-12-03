@@ -27,8 +27,9 @@ public class DBUnitTestSQL extends DBTestCase{
 	public DBUnitTestSQL(String name) {
 		super(name);
 		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_DRIVER_CLASS, "com.mysql.cj.jdbc.Driver");
-		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "jdbc:mysql://localhost:3306/DBUnit"
-				+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+		System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "jdbc:mysql://localhost/?user=root&password=rootpassword");
+		//System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_CONNECTION_URL, "jdbc:mysql://localhost:3306/DBUnit"
+			//	+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
 		//System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_USERNAME, "calidad");
 		//System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "calidad");
 	}
