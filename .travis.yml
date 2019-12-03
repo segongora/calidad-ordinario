@@ -27,3 +27,8 @@ script:
 - mvn test
 - mvn surefire:test -Dtest=DBUnitTestSQL
 
+mysql:
+  database: DBUnit
+  username: travis
+  encoding: utf8
+
