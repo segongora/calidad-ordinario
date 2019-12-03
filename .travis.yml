@@ -20,7 +20,7 @@ before_install:
   - sudo cp chromedriver /usr/bin
   
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
-  - mysql -e 'CREATE TABLE IF NOT EXISTS Alumnia (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, firstName VARCHAR(45), lastName VARCHAR(45), age INT NOT NULL, average FLOAT NOT NULL);'
+  - mysql -e 'USE DBUnit; CREATE TABLE IF NOT EXISTS Alumnia (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, firstName VARCHAR(45), lastName VARCHAR(45), age INT NOT NULL, average FLOAT NOT NULL);'
 
 script: 
 - mvn clean
