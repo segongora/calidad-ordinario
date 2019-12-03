@@ -10,8 +10,8 @@ public class ClassAlumnoMap implements AlumnoDAO{
 		// TODO Auto-generated method stub	
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/calidad"
-					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "qazwsxedc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBUnit"
+					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 			String query = "Insert Into Alumnia(id, firstName, lastName, age, average) values (?, ?, ?, ?, ?);";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			preparedStatement.setInt (1, alumno.getID());
@@ -33,8 +33,8 @@ public class ClassAlumnoMap implements AlumnoDAO{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/calidad"
-					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "qazwsxedc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBUnit"
+					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 			String query = "Delete from Alumnia where id = ?;";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			preparedStatement.setInt (1, alumno.getID());
@@ -52,8 +52,8 @@ public class ClassAlumnoMap implements AlumnoDAO{
 		// TODO Auto-generated method stub
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/calidad"
-					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "qazwsxedc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBUnit"
+					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 			String query = "Update Alumnia Set average = ? where id = ?;";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			preparedStatement.setDouble(1, alumno.getAvg());
@@ -72,8 +72,8 @@ public class ClassAlumnoMap implements AlumnoDAO{
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/calidad"
-					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "qazwsxedc");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBUnit"
+					+ "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "");
 			String query = "Select * from Alumnia";
 			PreparedStatement preparedStatement = conn.prepareStatement(query);
 			preparedStatement.execute();
