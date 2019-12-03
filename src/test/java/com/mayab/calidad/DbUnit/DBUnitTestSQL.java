@@ -54,7 +54,7 @@ public class DBUnitTestSQL extends DBTestCase{
 		Alumno alumno = new Alumno("Jose", "Rasgado", 23, 21, 9.3);
 		ClassAlumnoMap functions = new ClassAlumnoMap();
 		functions.addAlumno(alumno);
-		assertEquals(3, conn.getRowCount("Alumnia"));
+		assertEquals(4, conn.getRowCount("Alumnia"));
 		conn.close();
 	}
 	
@@ -64,7 +64,7 @@ public class DBUnitTestSQL extends DBTestCase{
 		Alumno alumno = new Alumno("Jose", "Rasgado", 2, 21, 9.3);
 		ClassAlumnoMap functions = new ClassAlumnoMap();
 		functions.removeAlumno(alumno);
-		assertEquals(3, conn.getRowCount("Alumnia"));
+		assertEquals(2, conn.getRowCount("Alumnia"));
 		conn.close();
 	}
 	
