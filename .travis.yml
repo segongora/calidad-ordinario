@@ -25,6 +25,7 @@ before_install:
 script: 
 - mvn clean
 - mvn test
+- mvn surefire:test -Dtest=DBUnitTestSQL
 
 after_success: 
 - mysql -e 'SHOW DATABASES;'
