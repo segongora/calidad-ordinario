@@ -1,5 +1,3 @@
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-FLUSH PRIVILEGES;
 CREATE DATABASE IF NOT EXISTS DBUnit;
 USE DBUnit;
 CREATE TABLE IF NOT EXISTS Alumnia(
