@@ -8,7 +8,7 @@ services:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
-  - mysql -e 'CREATE USER \'calidad\'@\'localhost\' IDENTIFIED BY \'calidad\'; '
+  - mysql -e 'CREATE USER 'calidad'@'localhost' IDENTIFIED BY 'calidad'; '
   - mysql -e 'GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ON *.* TO 'calidad'@'localhost';  '
   - mysql -e 'USE DBUnit; CREATE TABLE IF NOT EXISTS Alumnia(id int not null auto_increment primary key, firstName varchar(40) not null, lastName varchar(40) not null, age int not null, average float not null);'
   - sudo apt-get update
