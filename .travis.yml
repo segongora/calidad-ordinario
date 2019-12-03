@@ -20,7 +20,7 @@ before_install:
   - sudo cp chromedriver /usr/bin
   
   - sudo cp script.sql /usr/bin
-  - mysql -u < /usr/bin/script.sql
+  - mysql < /usr/bin/script.sql
   
 script: 
 - mvn clean
