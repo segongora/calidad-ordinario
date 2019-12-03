@@ -7,7 +7,7 @@ services:
 - mysql
 
 before_install:
-  - mysql -u root --password="" < /travis.sql
+  - mysql -u root --password="" < travis.sql
   - sudo apt-get update
   - sudo apt-get install dbus-x11
   - export DISPLAY=:99.0
