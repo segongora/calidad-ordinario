@@ -25,11 +25,14 @@ before_install:
 script: 
 - mvn clean
 - mvn test
+- mvn surefire:test -Dtest=funcionales
+- mvn surefire:test -Dtest=alumnoMock
 - mvn surefire:test -Dtest=DBUnitTestSQL
 
 after_success: 
 - mysql -e 'SHOW DATABASES;'
 - mysql -e 'USE DBUnit; SHOW TABLES;'
+- mysql -e 'USE DBUnit; SELECT * FROM Alumnia;'
 
 
 notifications:
