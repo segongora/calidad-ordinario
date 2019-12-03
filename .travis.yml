@@ -8,6 +8,7 @@ services:
 
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
+  - mysql -e 'use DBUnit;'
   - mysql -e 'CREATE TABLE IF NOT EXISTS Alumnia(id unsigned int not null auto_increment primary key, firstName varchar(40) not null, lastName varchar(40) not null, age unsigned int not null, average float not null);'
   - sudo apt-get update
   - sudo apt-get install dbus-x11
