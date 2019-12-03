@@ -18,7 +18,7 @@ before_install:
   - wget https://chromedriver.storage.googleapis.com/2.38/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - sudo cp chromedriver /usr/bin
-  
+  - mysql -u root --password="" < /script.sql
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
   - mysql -e 'USE DBUnit; CREATE TABLE IF NOT EXISTS Alumnia (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, firstName VARCHAR(45), lastName VARCHAR(45), age INT NOT NULL, average FLOAT NOT NULL);'
 
