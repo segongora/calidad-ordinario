@@ -20,6 +20,7 @@ before_install:
   - sudo cp chromedriver /usr/bin
   
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
+  - mysql -u root -e "GRANT ALL PRIVILEGES ON mydb.* TO 'travis'@'%';";
   - mysql -e 'USE DBUnit; CREATE TABLE IF NOT EXISTS Alumnia (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, firstName VARCHAR(45), lastName VARCHAR(45), age INT NOT NULL, average FLOAT NOT NULL);'
 
 script: 
@@ -27,8 +28,3 @@ script:
 - mvn test
 - mvn surefire:test -Dtest=DBUnitTestSQL
 
-test:
-  adapter: mysql
-  database: DBUnit
-  username: travis
-  encoding: utf8
