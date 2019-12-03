@@ -28,4 +28,5 @@ script:
 
 after_success: 
 - mysql -e 'SHOW DATABASES;'
+- mysql -e 'USE DBUnit; SHOW TABLES;'
 
