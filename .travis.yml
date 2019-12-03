@@ -19,11 +19,11 @@ before_install:
   - unzip chromedriver_linux64.zip
   - sudo cp chromedriver /usr/bin
   
-  - mysql -u root -p -h localhost
-  - mysql -e 'CREATE USER 'calidad'@'localhost' IDENTIFIED BY 'calidad';'
+  - mysqld --skip-grant-tables
+  - mysql -u root mysql
+  - mysql -e 'UPDATE user SET Password=PASSWORD('calidad') where USER='root';'
+  - mysql -e 'FLUSH PRIVILEGES;'
   - mysql -e 'CREATE DATABASE IF NOT EXISTS DBUnit;'
-  - mysql -e 'GRANT ALL PRIVILEGES ON DBUnit.* TO 'calidad'@'localhost';'
-  - mysql -e 'quit; mysql -u calidad -p -h localhost'
   - mysql -e 'USE DBUnit; CREATE TABLE IF NOT EXISTS Alumnia (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, firstName VARCHAR(45), lastName VARCHAR(45), age INT NOT NULL, average FLOAT NOT NULL);'
 
 script: 
