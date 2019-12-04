@@ -53,8 +53,9 @@ public class DBUnitTestSQL extends DBTestCase{
 		IDatabaseConnection conn = getConnection();
 		Alumno alumno = new Alumno("Jose", "Rasgado", 23, 21, 9.3);
 		ClassAlumnoMap functions = new ClassAlumnoMap();
+		int size = conn.getRowCount("Alumnia");
 		functions.addAlumno(alumno);
-		assertEquals(4, conn.getRowCount("Alumnia"));
+		assertEquals(size + 1, conn.getRowCount("Alumnia"));
 		conn.close();
 	}
 	
@@ -63,8 +64,9 @@ public class DBUnitTestSQL extends DBTestCase{
 		IDatabaseConnection conn = getConnection();
 		Alumno alumno = new Alumno("Jose", "Rasgado", 2, 21, 9.3);
 		ClassAlumnoMap functions = new ClassAlumnoMap();
+		int size = conn.getRowCount("Alumnia");
 		functions.removeAlumno(alumno);
-		assertEquals(2, conn.getRowCount("Alumnia"));
+		assertEquals(size - 1, conn.getRowCount("Alumnia"));
 		conn.close();
 	}
 	
